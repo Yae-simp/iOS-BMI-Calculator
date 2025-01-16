@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
     var height: Int = 161
-    var weight: Float = 60.0
+    var weight: Float = 59.8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     @IBAction func setWeight(_ sender: UIStepper) {
         weight = Float(sender.value)
-        weightLabel.text = "\(weight) kg"
+        weightLabel.text = "\(weight) Kg"
     }
     
     @IBAction func calculate(_ sender: Any) {
@@ -44,26 +44,25 @@ class ViewController: UIViewController {
     func setMessageAndColor(fromValue result: Float) {
         switch result {
         case 0..<18.5:
-            messageLabel.text = "Low weight"
+            messageLabel.text = "Bajo peso"
             messageLabel.textColor = UIColor(named: "imc-result/under")
             resultLabel.textColor = UIColor(named: "imc-result/under")
         case 18.5..<25:
-            messageLabel.text = "Normal weight"
+            messageLabel.text = "Peso normal"
             messageLabel.textColor = UIColor(named: "imc-result/normal")
             resultLabel.textColor = UIColor(named: "imc-result/normal")
         case 25..<30:
-            messageLabel.text = "Overweight"
+            messageLabel.text = "Sobrepeso"
             messageLabel.textColor = UIColor(named: "imc-result/over")
             resultLabel.textColor = UIColor(named: "imc-result/over")
         case 30..<35:
-            messageLabel.text = "Obesity"
+            messageLabel.text = "Obesidad"
             messageLabel.textColor = UIColor(named: "imc-result/obesity")
             resultLabel.textColor = UIColor(named: "imc-result/obesity")
         default:
-            messageLabel.text = "Severe obesity"
+            messageLabel.text = "Obesidad morbida"
             messageLabel.textColor = UIColor(named: "imc-result/morbid")
             resultLabel.textColor = UIColor(named: "imc-result/morbid")
         }
     }
 }
-
